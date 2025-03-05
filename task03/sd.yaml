@@ -1,0 +1,33 @@
+name: HelloWorldAPIGatewayDeployment
+region: us-east-1 # Adjust this to the region you wish to deploy in
+resources:
+  - type: api_gateway
+    name: HelloWorldAPI
+    stage_name: dev # Change this as required for different environments
+    resources:
+      - path: /hello
+        method: GET
+        lambda_integration:
+          name: hello_world
+          alias: ${{ lambdas_alias_name }}
+    depends_on:
+      - hello_world
+
+  - type: lambda
+    name: hello_world
+    role: hello_world-role
+    runtime: java11
+    handler: com.task03.HelloWorld::handleRequest
+    source_path: ./target/lambda-java-1.0-SNAPSHOT.jar
+    timeout: 15
+    memory: 256
+    environment_variables:
+      LAMBDA_ALIAS_NAME: ${{ lambdas_alias_name }}
+    publish: true
+    logs_expiration: ${{ logs_expiration }}
+
+  - type: iam_role
+    name: hello_world-role
+    policy_attachments:
+      - AWSLambdaBasicExecutionRole
+      - AWSLambdaVPCAccessExecutionRole # Consider adding this if Lambda needs VPC access
