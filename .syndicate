@@ -1,0 +1,70 @@
+name: task05
+locks:
+  modification_lock:
+    last_modification_date: '2025-03-06T06:57:57Z'
+    is_locked: false
+    initiator: prajapati_harshil
+events:
+- operation: deploy
+  initiator: prajapati_harshil
+  bundle_name: task05_250306.122639
+  deploy_name: task05
+  time_start: '2025-03-06T12:26:58Z'
+  time_end: '2025-03-06T12:27:57Z'
+  duration_sec: 59.086
+  status: succeeded
+  rollback_on_error: false
+- operation: build
+  initiator: prajapati_harshil
+  bundle_name: task05_250306.122639
+  time_start: '2025-03-06T12:26:39Z'
+  time_end: '2025-03-06T12:26:44Z'
+  duration_sec: 5.031
+  status: succeeded
+- operation: upload
+  initiator: prajapati_harshil
+  bundle_name: task05_250306.122639
+  time_start: '2025-03-06T12:26:42Z'
+  time_end: '2025-03-06T12:26:44Z'
+  duration_sec: 1.652
+  status: succeeded
+- operation: package_meta
+  initiator: prajapati_harshil
+  bundle_name: task05_250306.122639
+  time_start: '2025-03-06T12:26:42Z'
+  time_end: '2025-03-06T12:26:42Z'
+  duration_sec: 0.007
+  status: succeeded
+- operation: assemble
+  initiator: prajapati_harshil
+  bundle_name: task05_250306.122639
+  time_start: '2025-03-06T12:26:40Z'
+  time_end: '2025-03-06T12:26:42Z'
+  duration_sec: 2.094
+  status: succeeded
+- operation: assemble_node
+  initiator: prajapati_harshil
+  bundle_name: task05_250306.122639
+  time_start: '2025-03-06T12:26:40Z'
+  time_end: '2025-03-06T12:26:42Z'
+  duration_sec: 2.089
+  status: succeeded
+- operation: test
+  initiator: prajapati_harshil
+  time_start: '2025-03-06T12:26:40Z'
+  time_end: '2025-03-06T12:26:40Z'
+  duration_sec: 0.001
+  status: succeeded
+latest_deploy:
+  initiator: prajapati_harshil
+  bundle_name: task05_250306.122639
+  deploy_name: task05
+  time_start: '2025-03-06T12:26:58Z'
+  time_end: '2025-03-06T12:27:57Z'
+  duration_sec: 59.086
+  is_succeeded: true
+build_projects_mapping:
+  nodejs: app
+lambdas:
+  api_handler:
+    runtime: nodejs
